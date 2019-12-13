@@ -172,6 +172,11 @@
   - [[#epub][Epub]]
   - [[#pdf][Pdf]]
   - [[#speed-reading][Speed reading]]
+- [[#readmeorg-files-that-need-proper-tags][README.org files that need proper tags]]
+  - [[#helpful][Helpful]]
+  - [[#kubernetes][Kubernetes]]
+  - [[#solidity-layer][Solidity layer]]
+  - [[#vue][Vue]]
 - [[#source-control][Source control]]
   - [[#git][Git]]
   - [[#github][Github]]
@@ -1092,7 +1097,7 @@ Features:
 - Syntax Highlighting
 
 *** Mercury
-[[file:+lang/mercury-layer/README.org][+lang/mercury-layer/README.org]]
+[[file:+lang/mercury/README.org][+lang/mercury/README.org]]
 
 This layer adds support for the Mercury language.
 
@@ -1802,8 +1807,10 @@ This layer adds support for editing Lua.
 
 Features:
 - Editing lua files using [[https://github.com/immerrr/lua-mode][lua-mode]]
+- Code-Completion with =company-lsp= or =company-lua=
 - Sending code to a lua REPL
 - Code linting using [[https://github.com/mpeterv/luacheck][Luacheck]]
+- Cross references (definitions, references, rename...)
 
 **** Nim
 [[file:+lang/nim/README.org][+lang/nim/README.org]]
@@ -1878,6 +1885,8 @@ Features:
 - Complete and jump to define with [[https://github.com/xcwen/ac-php][company-php]]
 - Run tests with PHPUnit
 - Reformat code with PHP CBF
+- Debug your programs with XDebug (via [[https://github.com/ahungry/geben][geben]])
+- Refactor source files with help of [[https://github.com/emacs-php/phpactor.el][phpactor.el]]
 - Support for the [[https://langserver.org/][Language Server Protocol]] (experimental)
 
 The =gtags= layer is recommended to benefit from better =eldoc= and
@@ -1898,7 +1907,7 @@ Features:
 - Code Navigation
 - Documentation Lookup using [[https://github.com/proofit404/anaconda-mode][anaconda-mode]] and [[https://github.com/tsgates/pylookup][pylookup]]
 - Test Runners using [[https://github.com/syl20bnr/nose.el][nose.el]] or [[https://github.com/ionrock/pytest-el][pytest]]
-- Virtual Environment using [[https://github.com/jorgenschaefer/pyvenv][pyvenv]] and [[https://github.com/yyuu/pyenv][pyenv]]
+- Virtual Environment using [[https://github.com/jorgenschaefer/pyvenv][pyvenv]] and [[https://github.com/yyuu/pyenv][pyenv]] as well as [[https://github.com/pypa/pipenv][pipenv]]
 - semantic mode is enabled
 - PEP8 compliant formatting via [[https://github.com/google/yapf][YAPF]] or [[https://github.com/ambv/black][black]]
 - PEP8 checks with [[https://pypi.python.org/pypi/flake8][flake8]] or [[https://pypi.python.org/pypi/pylint/1.6.4][pylint]]
@@ -2242,6 +2251,61 @@ A speed reading mode for Emacs.
 Features:
 - Support for =speed-reading= of arbitrary texts
 
+* README.org files that need proper tags
+** Helpful
+[[file:+emacs/helpful/README.org][+emacs/helpful/README.org]]
+
+This layer replaces the existing emacs related help buffers with more detailed ones.
+
+Features:
+- Better help buffers with [[https://github.com/Wilfred/helpful][helpful]] for emacs related buffers
+- Source code shown implicitly in help buffer for all lisp objects
+- More detailed descriptions in the emacs specific function, variable and key help buffers
+- Better formatted elisp docstrings
+
+** Kubernetes
+[[file:+tools/kubernetes/README.org][+tools/kubernetes/README.org]]
+
+This layer provides the [[https://github.com/chrisbarrett/kubernetes-el#kubernetes-el][kubernetes-el]] package, a magit-style interface to the
+Kubernetes command-line client.
+
+Features:
+- Live-updating lists of kubernetes resources
+- Viewing and deleting pods, configmaps and secrets
+- Switching contexts and namespaces.
+- Showing logs and exec'ing into containers
+- Describing pods
+
+** Solidity layer
+[[file:+lang/solidity/README.org][+lang/solidity/README.org]]
+
+A layer to support Solidity development in Spacemacs.
+
+Features:
+- Syntax highlighting
+- Syntax checking
+- Gas estimation
+
+** Vue
+[[file:+frameworks/vue/README.org][+frameworks/vue/README.org]]
+
+Layer for Vue, for working with =.vue= files.
+
+Note: This layer creates a derived mode called =vue-mode= on the fly out of
+=web-mode= to handle vue files. It will conflict with the [[https://github.com/AdamNiederer/vue-mode][vue-mode package]], make sure
+you don't use that package together with this layer.
+
+Features:
+- Wholesome features from =web-mode=, especially on template part
+- Better performance
+- On-the-fly syntax checking with =eslint=
+- Proper syntax highlight and indentation with =vue-mode=
+- Two options for backend support for autocompletion and code analysis: =lsp= and =dumb=
+- Code autocompletion with =company-mode=
+- Formatting code with =prettier= layer
+- =evil-matchit= =%= to jump between open and close tags
+- =emmet-mode= and =yasnippet= for code expanding with the =TAB= key
+
 * Source control
 ** Git
 [[file:+source-control/git/README.org][+source-control/git/README.org]]
@@ -2564,6 +2628,7 @@ Features:
 - =Docker= container and image management via [[https://github.com/Silex/docker.el][docker.el]]
 - =docker-compose= integration via [[https://github.com/Silex/docker.el][docker.el]]
 - Syntax checking via [[https://github.com/hadolint/hadolint][hadolint]]
+- Code-Completion via =company-lsp=
 
 ** Fasd
 [[file:+tools/fasd/README.org][+tools/fasd/README.org]]
@@ -2779,6 +2844,7 @@ This layer configures the various shells available in Emacs.
 
 Features:
 - Shell integration
+- Running external terminal emulator in current/project directory
 
 ** Sphinx
 [[file:+tools/sphinx/README.org][+tools/sphinx/README.org]]
